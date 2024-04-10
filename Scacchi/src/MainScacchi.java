@@ -7,7 +7,6 @@ public class MainScacchi {
 
     public static void main(String[] args) {
        MovimentoRook m = new MovimentoRook();
-       ScacchieraRook s = new ScacchieraRook();
 
         m.inizializzaScacchiera(); // Inizializza la schacchiera
         m.disegnaScacchiera(); // Disegna la schacchiera iniziale
