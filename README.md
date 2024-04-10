@@ -1,4 +1,4 @@
-_**Progetto Schacchiera Rook**_
+<h1>Progetto Schacchiera Rook</h1>
 
 Questo progetto è una semplice implementazione in Java di un'applicazione che simula il movimento di una torre su una schacchiera. L'applicazione consente all'utente di muovere la torre su una schacchiera 8x8 e visualizzare la schacchiera aggiornata dopo ogni mossa.
 
@@ -17,7 +17,7 @@ Controllo della validità del movimento della torre.
 Utilizzo
 Per utilizzare l'applicazione, eseguire la classe Main. L'applicazione chiederà all'utente di inserire la mossa della torre, specificando la posizione iniziale e la posizione finale. L'applicazione disegnerà la schacchiera aggiornata dopo ogni mossa.
 
-*Esempio di utilizzo:*
+**Esempio di utilizzo:**
 
 1  T - - - - - -
 
@@ -57,7 +57,7 @@ Inserisci la mossa della torre, scrivi la posizione della pedina poi la destinaz
 
   A B C D E F G H
   
-*Note*
+**Note**
 
 Questo progetto è una semplice implementazione di base e non contiene tutte le funzionalità di un gioco di scacchi completo. Ad esempio, non è presente la logica per controllare se la mossa della torre causi scacco o scacco matto. Inoltre, non è presente la 
 
