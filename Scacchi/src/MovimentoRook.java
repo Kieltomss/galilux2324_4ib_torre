@@ -13,7 +13,7 @@ public class MovimentoRook extends ScacchieraRook {
      
     // Muove la torre sulla schacchiera
         public static void muoviTorre() {
-         System.out.println("Inserisci la mossa della torre (es. A1-B1): ");
+         System.out.println("Inserisci la mossa della torre,bisogna inserire la posizione iniziale a seguito un trattino e la posizione desiderata(es. A1-B1): ");
          String mossa = scanner.nextLine();
          String[] coordinate = mossa.split("-");
          String from = coordinate[0];
