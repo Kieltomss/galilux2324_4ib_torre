@@ -15,10 +15,7 @@ Controllo della validità del movimento della torre.
 Utilizzo
 Per utilizzare l'applicazione, eseguire la classe Main. L'applicazione chiederà all'utente di inserire la mossa della torre, specificando la posizione iniziale e la posizione finale. L'applicazione disegnerà la schacchiera aggiornata dopo ogni mossa.
 
-Esempio di utilizzo
-Edit
-Full Screen
-Copy code
+Esempio di utilizzo:
 1 T - - - - - -
 2 - - - - - - -
 3 - - - - - - -
