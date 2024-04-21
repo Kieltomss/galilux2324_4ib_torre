@@ -19,41 +19,41 @@ Per utilizzare l'applicazione, eseguire la classe Main. L'applicazione chiederà
 
 <h2>Esempio di utilizzo:</h2>
 
-1  T - - - - - -
-
-2  - - - - - - -
-
-3  - - - - - - -
-
-4  - - - - - - -
-
-5  - - - - - - -
-
-6  - - - - - - -
+8  T - - - - - -
 
 7  - - - - - - -
 
-8  - - - - - - -
+6  - - - - - - -
+
+5  - - - - - - -
+
+4  - - - - - - -
+
+3  - - - - - - -
+
+2  - - - - - - -
+
+1  - - - - - - -
 
   A B C D E F G H
   
-Inserisci la mossa della torre, scrivi la posizione della pedina poi la destinazione(es. A1-B1 il trattino deve essere assieme alle due posizioni): A1-B1
+Inserisci la mossa della torre, scrivi la posizione della pedina poi la destinazione(es. A1-B1 il trattino deve essere assieme alle due posizioni): A8-B8
 
-1 - T - - - - -
+8  - T - - - - -
 
-2 - - - - - - -
+7  - - - - - - -
 
-3 - - - - - - -
+6  - - - - - - -
 
-4 - - - - - - -
+5  - - - - - - -
 
-5 - - - - - - -
+4  - - - - - - -
 
-6 - - - - - - -
+3  - - - - - - -
 
-7 - - - - - - -
+2  - - - - - - -
 
-8 - - - - - - -
+1  - - - - - - -
 
   A B C D E F G H
   
