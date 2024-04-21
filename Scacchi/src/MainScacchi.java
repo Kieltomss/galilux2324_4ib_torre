@@ -1,23 +1,42 @@
+/* 
+ * 
+ * 
+ * @author  Kieltomss 
+ * LOG:
+ * - Date 0.1: 03.07.2024
+ * 
+ * 
+ */
 import java.util.Scanner;
 
 public class MainScacchi {
-   
-    private static char[][] scacchiera = new char[8][8]; // La schacchiera
-    private static Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
-       MovimentoRook m = new MovimentoRook();
+        MovimentoRook m = new MovimentoRook();
+        // Set up the initial positions of the rooks on the board
+        RookBianco rookBianco = new RookBianco();
+        RookNero rookNero = new RookNero();
 
-        m.inizializzaScacchiera(); // Inizializza la schacchiera
-        m.disegnaScacchiera(); // Disegna la schacchiera iniziale
-        //  boolean turnoBianco = true;
+        m.setPezzo(0, 0, rookBianco.getSimbolo());
+        m.setPezzo(7, 0, rookNero.getSimbolo());
 
-        while (true) {
-            m.muoviTorre(); // Chiamata per muovere la torre
-            m.disegnaScacchiera(); // Disegna la schacchiera dopo ogni mossa
-           
+        // Display the initial board
+        m.stampaScacchiera();
+
+        // Let the game begin
+        Scanner scanner = new Scanner(System.in);
+        boolean turnoBianco = true;
+        boolean continuaGioco = true;
+        while (continuaGioco) {
+            m.effettuaMossa(turnoBianco);
+            System.out.println("Vuoi continuare il gioco? (s/n):");
+            String risposta = scanner.nextLine();
+            if (risposta.equalsIgnoreCase("n")) {
+                continuaGioco = false;
+            }
+            turnoBianco = !turnoBianco; // Cambia il turno dopo ogni mossa
         }
+
+        // Log all movements to FileLog
+        FileLog.logMovements(m.getMovimenti());
     }
-
-
 }
