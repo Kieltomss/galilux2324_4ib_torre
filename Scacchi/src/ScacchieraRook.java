@@ -5,11 +5,12 @@
 
 /**
  *
- * @author 4INFB
+ * @author Kieltomss
  */
 public class ScacchieraRook {
-     static char[][] scacchiera = new char[8][8];
-     public static void inizializzaScacchiera() {
+    private static char[][] scacchiera = new char[8][8];
+
+    public static void inizializzaScacchiera() {
         for (int riga = 0; riga < 8; riga++) {
             for (int colonna = 0; colonna < 8; colonna++) {
                 scacchiera[riga][colonna] = ' ';
@@ -29,5 +30,13 @@ public class ScacchieraRook {
             System.out.println();
         }
         System.out.println("  A B C D E F G H");
+    }
+
+    public static char getPezzo(int riga, int colonna) {
+        return scacchiera[riga][colonna];
+    }
+
+    public static void setPezzo(int riga, int colonna, char pezzo) {
+        scacchiera[riga][colonna] = pezzo;
     }
 }
