@@ -3,6 +3,14 @@
 <pre>Questo progetto è una semplice implementazione in Java di un'applicazione che simula il movimento 
 di una torre su una schacchiera.L'applicazione consente all'utente di muovere la torre su una schacchiera
 8x8 e visualizzare la schacchiera aggiornata dopo ogni mossa.</pre>
+<h2>Funzionalità</h2>
+<pre>
+-<b><i>Inizializzazione scacchiera</b></i>: La scacchiera viene inizializzata con la posizione iniziale della torre.
+-<b><i>Disegno scacchiera</b></i>: La scacchiera corrente viene visualizzata a console.
+-<b><i>Movimento torre</b></i>: L'utente può muovere la torre sulla scacchiera inserendo la posizione iniziale e quella finale.
+-<b><i>Controllo validità mossa</b></i>: La mossa della torre viene controllata per verificarne la validità 
+(ad esempio, se la torre si muove in orizzontale o verticale e se non ci sono ostacoli).
+-<b><i>Log movimenti</b></i>: I movimenti della torre vengono salvati in un file di log.</pre>
 
 <h2>Struttura del progetto</h2>
 
