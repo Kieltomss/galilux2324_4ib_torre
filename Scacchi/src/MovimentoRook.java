@@ -33,7 +33,7 @@ public class MovimentoRook extends ScacchieraRook {
             char pezzoMuovendosi = getPezzo(fromRow, fromCol);
     
             // Controllo se la casella di partenza contiene una pedina del colore corretto
-            if ((turnoBianco && Character.toUpperCase(pezzoMuovendosi) == 'R') || (!turnoBianco && Character.toUpperCase(pezzoMuovendosi) == 'R')) {
+            if ((turnoBianco && pezzoMuovendosi == 'R') || (!turnoBianco && pezzoMuovendosi == 'r')) {
                 if (pezzoMuovendosi != '-') {
                     char pezzoSpostandosi = getPezzo(toRow, toCol);
                     // Controlla se la casella di destinazione è vuota o contiene una pedina di colore opposto
@@ -45,7 +45,7 @@ public class MovimentoRook extends ScacchieraRook {
                                                     String.valueOf(simboloPezzo) + (char) ('A' + toCol) + (toRow + 1);
                             String mossaLog = mossaNotazione + " " + (turnoBianco ? "Bianco" : "Nero"); // Aggiungi il colore del giocatore alla notazione
                             movimenti += mossaLog + "\n";
-                            stampaScacchiera();
+                            stampaScacchieraConPezzi();
                             break; // Esci dal loop se la mossa è valida e completa
                         } else {
                             System.out.println("Mossa non valida: la torre si può muovere solo in orizzontale o verticale.");
@@ -62,24 +62,18 @@ public class MovimentoRook extends ScacchieraRook {
         }
     }
     
+    
+    
       
     public String getMovimenti() {
         return movimenti;
     }
 
     private boolean isValidMove(int fromRow, int fromCol, int toRow, int toCol) {
-        return fromRow == toRow || fromCol == toCol || Math.abs(fromRow - toRow) == Math.abs(fromCol - toCol);
+        // Movimento lungo la stessa riga o la stessa colonna
+        return fromRow == toRow || fromCol == toCol;
     }
     
+    
 
-    public void stampaScacchiera() {
-        for (int riga = 7; riga >= 0; riga--) {
-            System.out.print((riga + 1) + " ");
-            for (int colonna = 0; colonna < 8; colonna++) {
-                System.out.print(getPezzo(riga, colonna) + " ");
-            }
-            System.out.println();
-        }
-        System.out.println("  A B C D E F G H");
-    }
 }

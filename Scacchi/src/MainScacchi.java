@@ -19,8 +19,9 @@ public class MainScacchi {
         m.setPezzo(0, 0, rookBianco.getSimbolo());
         m.setPezzo(7, 0, rookNero.getSimbolo());
 
+
         // Display the initial board
-        m.stampaScacchiera();
+        m.stampaScacchieraConPezzi();
 
         // Let the game begin
         Scanner scanner = new Scanner(System.in);
@@ -37,6 +38,7 @@ public class MainScacchi {
         }
 
         // Log all movements to FileLog
-        FileLog.logMovements(m.getMovimenti());
+        FileLog fileLog = new FileLog("movimenti.txt");
+        fileLog.logMovements(m.getMovimenti());
     }
 }

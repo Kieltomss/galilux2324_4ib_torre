@@ -7,33 +7,69 @@
  */
 import java.io.FileWriter;
 import java.io.IOException;
+
 public class FileLog {
-    public static void logMovements(String movements) {
+    private String fileName;
+
+    public FileLog(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public void logMovements(String movements) {
         try {
-            FileWriter writer = new FileWriter("movimenti.txt");
+            FileWriter writer = new FileWriter(fileName);
             String[] moves = movements.split("\n");
-
-            for (int i = 0; i < moves.length; i++) {
-                String move = moves[i];
-                String notation = getMoveNotation(move.charAt(0), move.charAt(1), move.charAt(3), move.charAt(4));
-                writer.write((i + 1) + ". " + notation + "\n");
+    
+            int numeroMossa = 1;
+            for (int i = 0; i < moves.length; i += 2) {
+                String moveBianco = moves[i];
+                String moveNero = "";
+    
+                // Se ci sono ancora mosse nere, prendi il loro movimento
+                if (i + 1 < moves.length) {
+                    moveNero = moves[i + 1];
+                }
+    
+                String[] partsBianco = moveBianco.split(" ");
+                String notationBianco = partsBianco[1].toLowerCase(); // Converti la notazione in minuscolo
+    
+                // Se il pezzo è un Rook, mantieni la R maiuscola
+                if (partsBianco[0].equals("R")) {
+                    notationBianco = "R" + notationBianco.substring(1);
+                }
+    
+                String notationNero = "";
+    
+                // Se ci sono mosse nere, prendi la loro notazione
+                if (!moveNero.isEmpty()) {
+                    String[] partsNero = moveNero.split(" ");
+                    notationNero = partsNero[1].toLowerCase(); // Converti la notazione in minuscolo
+    
+                    // Se il pezzo è un Rook, mantieni la R maiuscola
+                    if (partsNero[0].equals("R")) {
+                        notationNero = "R" + notationNero.substring(1);
+                    }
+                }
+    
+                String notation = numeroMossa + ". " + notationBianco + " " + notationNero;
+                writer.write(notation + "\n");
+    
+                numeroMossa++;
             }
-
-            writer.close();
+    
+            writer.close(); // Chiusura del file di log dopo che tutte le mosse sono state registrate
         } catch (IOException e) {
             System.out.println("Errore durante la scrittura del file di log: " + e.getMessage());
         }
     }
+    
+    
 
-    private static String getMoveNotation(char fromCol, char fromRow, char toCol, char toRow) {
-        String fromSquare = getSquareNotation(fromCol, fromRow);
-        String toSquare = getSquareNotation(toCol, toRow);
-        return fromSquare + toSquare;
-    }
-
-    private static String getSquareNotation(char col, char row) {
-        int column = col - 'A' + 1;
-        int rowNumber = 8 - (row - '1');
-        return String.valueOf(column) + String.valueOf(rowNumber);
+    private String getMoveNotation(String moveBianco, String moveNero) {
+        String[] partsBianco = moveBianco.split(" ");
+        String[] partsNero = moveNero.split(" ");
+        String notationBianco = partsBianco[2]; // La posizione finale è al terzo posto nell'array partsBianco
+        String notationNero = partsNero[2]; // La posizione finale è al terzo posto nell'array partsNero
+        return notationBianco + " " + notationNero;
     }
 }
