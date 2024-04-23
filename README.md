@@ -1,34 +1,46 @@
 <h1>Progetto Schacchiera Rook</h1>
 
-<pre>Questo progetto è una semplice implementazione in Java di un'applicazione che simula il movimento 
+<h4>Questo progetto è una semplice implementazione in Java di un'applicazione che simula il movimento 
 di una torre su una schacchiera.L'applicazione consente all'utente di muovere la torre su una schacchiera
-8x8 e visualizzare la schacchiera aggiornata dopo ogni mossa.</pre>
+8x8 e visualizzare la schacchiera aggiornata dopo ogni mossa.</h4>
 <h2>Funzionalità</h2>
-<pre>
+<h4>
 -<b><i>Inizializzazione scacchiera</b></i>: La scacchiera viene inizializzata con la posizione iniziale della torre.
+  
 -<b><i>Disegno scacchiera</b></i>: La scacchiera corrente viene visualizzata a console.
+  
 -<b><i>Movimento torre</b></i>: L'utente può muovere la torre sulla scacchiera inserendo la posizione iniziale e quella finale.
+
 -<b><i>Controllo validità mossa</b></i>: La mossa della torre viene controllata per verificarne la validità 
 (ad esempio, se la torre si muove in orizzontale o verticale e se non ci sono ostacoli).
--<b><i>Log movimenti</b></i>: I movimenti della torre vengono salvati in un file di log.</pre>
+
+-<b><i>Log movimenti</b></i>: I movimenti della torre vengono salvati in un file di log.</h4>
 
 <h2>Struttura del progetto</h2>
 
-<pre>Il progetto è organizzato in tre classi:
+<h4>Il progetto è organizzato in tre classi:
 
 ScacchieraRook: Questa classe contiene la rappresentazione della schacchiera e i metodi per inizializzarla e disegnarla.
+
 MovimentoRook: Questa classe contiene la logica per muovere la torre sulla schacchiera e controllare se la mossa è valida.
+
 Main: Questa classe contiene il metodo main che inizializza l'applicazione e gestisce il ciclo di gioco.
-Funzionalità
+
+<h3>Funzionalità</h3>  
+
 Inizializzazione della schacchiera con la posizione iniziale della torre.
+
 Disegno della schacchiera corrente.
+
 Movimento della torre sulla schacchiera.
+
 Controllo della validità del movimento della torre.
-Utilizzo
+
+<h3>Utilizzo</h3>
+
 Per utilizzare l'applicazione, eseguire la classe Main. 
-L'applicazione chiederà all'utente di inserire la mossa della torre, 
-specificando la posizione iniziale e la posizione finale. L'applicazione disegnerà la schacchiera aggiornata dopo ogni mossa.
-</pre>
+L'applicazione chiederà all'utente di inserire la mossa della torre, specificando la posizione iniziale e la posizione finale. L'applicazione disegnerà la schacchiera aggiornata dopo ogni mossa.
+</h4>
 <h2>Esempio di utilizzo:</h2>
 <pre>
   
