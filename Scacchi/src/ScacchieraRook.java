@@ -10,33 +10,70 @@
 public class ScacchieraRook {
     private static char[][] scacchiera = new char[8][8];
 
+    // Inizializza la scacchiera con i pezzi
     public static void inizializzaScacchiera() {
+        scacchiera[0][0] = 'R'; // Rappresenta il rook bianco
+        scacchiera[7][0] = 'r'; // Rappresenta il rook nero
+        
+        // Inizializza le altre caselle con spazi vuoti
         for (int riga = 0; riga < 8; riga++) {
             for (int colonna = 0; colonna < 8; colonna++) {
-                scacchiera[riga][colonna] = ' ';
+                if (scacchiera[riga][colonna] != 'R' && scacchiera[riga][colonna] != 'r') {
+                    scacchiera[riga][colonna] = '-';
+                }
             }
         }
-        // Posizione iniziale della torre
-        scacchiera[0][0] = 'T'; // Per esempio, la torre si trova in A1
     }
 
-    // Disegna la schacchiera corrente
+    // Disegna la scacchiera corrente
     public static void disegnaScacchiera() {
+        // Stampa le pedine in base alla loro posizione sulla scacchiera
         for (int riga = 7; riga >= 0; riga--) {
             System.out.print((riga + 1) + " ");
-            for (int colonna = 0; colonna < 8; colonna++) {
-                System.out.print(scacchiera[riga][colonna] + " ");
+            for (char colonna = 'A'; colonna <= 'H'; colonna++) {
+                char pezzo = getPezzo(riga, convertiColonna(colonna));
+                System.out.print(pezzo + " ");
             }
             System.out.println();
         }
+
+        // Stampa le lettere delle colonne sotto i numeri delle righe
         System.out.println("  A B C D E F G H");
     }
 
+    // Restituisce il pezzo sulla scacchiera in base alle coordinate riga e colonna
     public static char getPezzo(int riga, int colonna) {
         return scacchiera[riga][colonna];
     }
 
+    // Imposta il pezzo sulla scacchiera in base alle coordinate riga e colonna
     public static void setPezzo(int riga, int colonna, char pezzo) {
         scacchiera[riga][colonna] = pezzo;
+    }
+
+    // Stampa la scacchiera con i pezzi e le lettere delle colonne sotto i numeri delle righe
+    public static void stampaScacchieraConPezzi() {
+        // Stampa le pedine in base alla loro posizione sulla scacchiera
+        for (int riga = 7; riga >= 0; riga--) {
+            System.out.print((riga + 1) + " ");
+            for (char colonna = 'A'; colonna <= 'H'; colonna++) {
+                char pezzo = getPezzo(riga, convertiColonna(colonna));
+                System.out.print(pezzo + "  ");
+            }
+            System.out.println();
+        }
+
+        // Stampa le lettere delle colonne sotto i numeri delle righe
+        System.out.println("   A B C D E F G H");
+    }
+
+    // Converte il carattere della riga nella sua corrispondente coordinata
+    public static int convertiRiga(char riga) {
+        return Character.getNumericValue(riga) - 1;
+    }
+
+    // Converte il carattere della colonna nella sua corrispondente coordinata
+    public static int convertiColonna(char colonna) {
+        return colonna - 'A';
     }
 }
