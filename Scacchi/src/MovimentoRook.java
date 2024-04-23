@@ -20,7 +20,7 @@ public class MovimentoRook extends ScacchieraRook {
         String colorePezzo = turnoBianco ? "Bianco" : "Nero"; // Colore del pezzo in base al turno
     
         while (true) {
-            System.out.println("Turno del giocatore " + colorePezzo);
+            System.out.println("Turno del giocatore " + colorePezzo + " '"+simboloPezzo+"'");
             System.out.println("Inserisci la mossa del rook (formato: colonna-riga):");
             String mossa = scanner.nextLine();
     

@@ -1,3 +1,8 @@
+/*
+ * 
+ * 
+ * @Author Kieltomss
+ */
 public class RookBianco extends MovimentoRook {
    
         private char simbolo = 'R';
