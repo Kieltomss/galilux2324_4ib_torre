@@ -62,14 +62,4 @@ public class FileLog {
             System.out.println("Errore durante la scrittura del file di log: " + e.getMessage());
         }
     }
-    
-    
-
-    private String getMoveNotation(String moveBianco, String moveNero) {
-        String[] partsBianco = moveBianco.split(" ");
-        String[] partsNero = moveNero.split(" ");
-        String notationBianco = partsBianco[2]; // La posizione finale è al terzo posto nell'array partsBianco
-        String notationNero = partsNero[2]; // La posizione finale è al terzo posto nell'array partsNero
-        return notationBianco + " " + notationNero;
-    }
 }

@@ -4,6 +4,8 @@
  * @author  Kieltomss 
  * LOG:
  * - Date 0.1: 03.07.2024
+ * - Date 0.2: 21.07.2024
+ * 
  * 
  * 
  */
@@ -15,18 +17,21 @@ public class MainScacchi {
         // Set up the initial positions of the rooks on the board
         RookBianco rookBianco = new RookBianco();
         RookNero rookNero = new RookNero();
+        Tutorial t = new Tutorial();
 
         m.setPezzo(0, 0, rookBianco.getSimbolo());
         m.setPezzo(7, 0, rookNero.getSimbolo());
 
-
-        // Display the initial board
+        t.eseguiTutorial();
+        //Scacchiera Iniziale
         m.stampaScacchieraConPezzi();
 
-        // Let the game begin
+        //Gioco
         Scanner scanner = new Scanner(System.in);
         boolean turnoBianco = true;
         boolean continuaGioco = true;
+
+
         while (continuaGioco) {
             m.effettuaMossa(turnoBianco);
             System.out.println("Vuoi continuare il gioco? (s/n):");
