@@ -10,26 +10,11 @@
 public class ScacchieraRook {
     private static char[][] scacchiera = new char[8][8];
 
-    // Inizializza la scacchiera con i pezzi
-    public static void inizializzaScacchiera() {
-        scacchiera[0][0] = 'R'; // Rappresenta il rook bianco
-        scacchiera[7][0] = 'r'; // Rappresenta il rook nero
-        
-        // Inizializza le altre caselle con spazi vuoti
-        for (int riga = 0; riga < 8; riga++) {
-            for (int colonna = 0; colonna < 8; colonna++) {
-                if (scacchiera[riga][colonna] != 'R' && scacchiera[riga][colonna] != 'r') {
-                    scacchiera[riga][colonna] = '-';
-                }
-            }
-        }
-    }
-
     // Disegna la scacchiera corrente
     public static void disegnaScacchiera() {
         // Stampa le pedine in base alla loro posizione sulla scacchiera
         for (int riga = 7; riga >= 0; riga--) {
-            System.out.print((riga + 1) + " ");
+            System.out.print((riga + 1) + "-");
             for (char colonna = 'A'; colonna <= 'H'; colonna++) {
                 char pezzo = getPezzo(riga, convertiColonna(colonna));
                 System.out.print(pezzo + " ");

@@ -21,6 +21,8 @@ public class MainScacchi {
 
         m.setPezzo(0, 0, rookBianco.getSimbolo());
         m.setPezzo(7, 0, rookNero.getSimbolo());
+        m.setPezzo(0, 7, rookBianco.getSimbolo());
+        m.setPezzo(7, 7, rookNero.getSimbolo());
 
         t.eseguiTutorial();
         //Scacchiera Iniziale

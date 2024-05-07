@@ -70,8 +70,29 @@ public class MovimentoRook extends ScacchieraRook {
     }
 
     private boolean isValidMove(int fromRow, int fromCol, int toRow, int toCol) {
-        // Movimento lungo la stessa riga o la stessa colonna
-        return fromRow == toRow || fromCol == toCol;
+        // Controllo se il movimento è orizzontale o verticale
+        if (fromRow == toRow || fromCol == toCol) {
+            // Se il movimento è orizzontale
+            if (fromRow == toRow) {
+                int direzioneColonna = fromCol < toCol ? 1 : -1;
+                for (int col = fromCol + direzioneColonna; col != toCol; col += direzioneColonna) {
+                    if (getPezzo(fromRow, col) != '-') {
+                        return false; // Pezzo sulla traiettoria
+                    }
+                }
+            }
+            // Se il movimento è verticale
+            else {
+                int direzioneRiga = fromRow < toRow ? 1 : -1;
+                for (int row = fromRow + direzioneRiga; row != toRow; row += direzioneRiga) {
+                    if (getPezzo(row, fromCol) != '-') {
+                        return false; // Pezzo sulla traiettoria
+                    }
+                }
+            }
+            return true; // Mossa valida
+        }
+        return false; // Mossa non valida (non orizzontale o verticale)
     }
     
     
