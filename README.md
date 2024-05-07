@@ -1,5 +1,28 @@
-<h1>Progetto Schacchiera Rook</h1>
-
+<h1>Progetto Scacchi Rook</h1>
+<h4>Benvenuti nel Progetto Scacchi Rook ideato dal Gruppo 4 della Classe 4INFB<br>
+membri:<br>
+  -@Kieltomss<br>
+  -@Cammello89<br>
+  -@sualega<br>
+  -@GR3G0RR
+</h4><br>
+<h1>Configurazione</h1><br>
+<h2>Requisiti</h2>
+<h4>Per poter lavorare/giocare su questo progetto, è necessario avere un'IDE di Java che supporti la JDK versione 20 di Oracle.<br> È consigliabile utilizzare NetBeans IDE 20 per un'esperienza sicura
+</h4>
+<h2>Installazione</h2>
+<h4>Attraverso i comandi di git esattamente un "pull" oppure un "clone":
+  <br>
+  <br>Pull:<br><br>
+  <pre>git pull [repository remoto] [branch] </pre>
+  <br>Clone:<br><br>
+  <pre>git clone [url repository remoto]</pre><br>
+  Dopo aver seguito questi passaggi, troverai una cartella contenente i file del gioco. Nella tua IDE, apri semplicemente questa cartella e inizia a lavorare/giocare
+</h4>
+<h2>Esecuzione</h2>
+<h4>Nella tua IDE potrai provare il gioco avviando il tasto play all'inizio chiederà di voler proseguire con il tutorial</h4><br>
+<h1>Utilizzo del progetto</h1>
+<h2>Panoramica</h2>
 <h4>Questo progetto è una semplice implementazione in Java di un'applicazione che simula il movimento 
 di una torre su una schacchiera.L'applicazione consente all'utente di muovere la torre su una schacchiera
 8x8 e visualizzare la schacchiera aggiornata dopo ogni mossa.</h4>
@@ -88,6 +111,13 @@ poi la destinazione(es. A1-B1 il trattino deve essere assieme alle due posizioni
 **Note**
 
 Questo progetto è una semplice implementazione di base e non contiene tutte le funzionalità di un gioco di scacchi completo. Ad esempio, non è presente la logica per controllare se la mossa della torre causi scacco o scacco matto. Inoltre, non è presente la 
-
 logica per gestire le mosse di altri pezzi scacchistici.
-</h4>
+</h4><br>
+<h1>Contribuzione al progetto</h1>
+<h2>Collaborare:</h2>
+<h4>Per ogni collaborazione sul progetto bisogna rispettare la gerarchia e il ciclo di vita del software sennò risultano problemi sia ai sviluppatori e al Project Manager del gruppo</h4>
+<h2>Revisione del lavoro:</h2>
+<h4>Prima di fare il commit finale per renderlo publico a tutti i collaboratori viene fatto un processo di controllo e revisione del lavoro e degli upgrade messi all'interno del progetto</h4><br>
+<h1>Bug e Errori</h1>
+<h4>di recente ho controllato il gioco l'unico problema e la grafica che non rispettava la scacchiera appieno<br>
+-Kieltom</h4>
