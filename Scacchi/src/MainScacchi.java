@@ -10,7 +10,8 @@
  * 
  */
 import java.util.Scanner;
-
+import java.awt.Desktop;
+import java.net.URI;
 public class MainScacchi {
     public static void main(String[] args) {
         MovimentoRook m = new MovimentoRook();
@@ -23,7 +24,16 @@ public class MainScacchi {
         m.setPezzo(7, 0, rookNero.getSimbolo());
         m.setPezzo(0, 7, rookBianco.getSimbolo());
         m.setPezzo(7, 7, rookNero.getSimbolo());
+        try {
+            // Specifica l'URL del link che vuoi aprire
+            URI link = new URI("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
 
+            // Apri il link utilizzando il browser predefinito del sistema
+            Desktop.getDesktop().browse(link);
+        } catch (Exception e) {
+            // Gestisci eventuali eccezioni
+            e.printStackTrace();
+        }
         t.eseguiTutorial();
         //Scacchiera Iniziale
         m.stampaScacchieraConPezzi();
