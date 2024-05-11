@@ -1,5 +1,5 @@
 <h1>Progetto Scacchi Rook</h1>
-<h4>Benvenuti nel Progetto Scacchi Rook ideato dal Gruppo 4 della Classe 4INFB<br>
+<h4>Benvenuti nel Progetto Scacchi Rook ideato dal Gruppo 3 della Classe 4INFB<br>
 membri:<br>
   -@Kieltomss<br>
   -@Cammello89<br>
