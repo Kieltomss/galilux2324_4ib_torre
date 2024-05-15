@@ -70,57 +70,8 @@ public class MovimentoRook extends ScacchieraRook {
     }
 
     private boolean isValidMove(int fromRow, int fromCol, int toRow, int toCol) {
-        if (fromRow >= 0 && fromRow < 8 && fromCol >= 0 && fromCol < 8 &&
-            toRow >= 0 && toRow < 8 && toCol >= 0 && toCol < 8) {
-            if (getPezzo(toRow, toCol) == '-') {
-                // Check if the move results in two pieces occupying the same cell
-                if (getPezzo(fromRow, fromCol) != '-') {
-                    if (fromRow == toRow) {
-                        int minCol = Math.min(fromCol, toCol);
-                        int maxCol = Math.max(fromCol, toCol);
-                        for (int col = minCol + 1; col < maxCol; col++) {
-                            if (getPezzo(fromRow, col) != '-') {
-                                return false;
-                            }
-                        }
-                    } else if (fromCol == toCol) {
-                        int minRow = Math.min(fromRow, toRow);
-                        int maxRow = Math.max(fromRow, toRow);
-                        for (int row = minRow + 1; row < maxRow; row++) {
-                            if (getPezzo(row, fromCol) != '-') {
-                                return false;
-                            }
-                        }
-                    }
-                }
-                return true;
-            } else {
-                // Check if the move results in the rook jumping over another piece
-                if (getPezzo(fromRow, fromCol) != '-') {
-                    if (fromRow == toRow) {
-                        int minCol = Math.min(fromCol, toCol);
-                        int maxCol = Math.max(fromCol, toCol);
-                        for (int col = minCol + 1; col < maxCol; col++) {
-                            if (getPezzo(fromRow, col) != '-' && getPezzo(fromRow, col) != getPezzo(toRow, toCol)) {
-                                return false;
-                            }
-                        }
-                    } else if (fromCol == toCol) {
-                        int minRow = Math.min(fromRow, toRow);
-                        int maxRow = Math.max(fromRow, toRow);
-                        for (int row = minRow + 1; row < maxRow; row++) {
-                            if (getPezzo(row, fromCol) != '-' && getPezzo(row, fromCol) != getPezzo(toRow, toCol)) {
-                                return false;
-                            }
-                        }
-                    }
-                }
-                return true;
-            }
-        }
-        return false;
+       return fromRow == toRow || fromCol == toCol;
     }
-    }
-    
+}
     
 
