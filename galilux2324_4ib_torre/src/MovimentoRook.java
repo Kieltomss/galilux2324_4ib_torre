@@ -66,54 +66,8 @@ public class MovimentoRook extends ScacchieraRook { // Estende la classe Scacchi
         return movimenti; // Ritorna i movimenti
     }
 
-    private boolean isValidMove(int fromRow, int fromCol, int toRow, int toCol) { // Metodo per verificare la validità della mossa
-        if (fromRow >= 0 && fromRow < 8 && fromCol >= 0 && fromCol < 8 &&
-            toRow >= 0 && toRow < 8 && toCol >= 0 && toCol < 8) { // Verifica che le coordinate siano all'interno della scacchiera
-            if (getPezzo(toRow, toCol) == '-') { // Controlla se la casella di destinazione è vuota
-                if (getPezzo(fromRow, fromCol) != '-') { // Verifica che la casella di partenza non sia vuota
-                    if (fromRow == toRow) { // Se la mossa è orizzontale
-                        int minCol = Math.min(fromCol, toCol); // Calcola la colonna minima
-                        int maxCol = Math.max(fromCol, toCol); // Calcola la colonna massima
-                        for (int col = minCol + 1; col < maxCol; col++) { // Scorre le colonne intermedie
-                            if (getPezzo(fromRow, col) != '-') { // Se una casella intermedia non è vuota, la mossa non è valida
-                                return false;
-                            }
-                        }
-                    } else if (fromCol == toCol) { // Se la mossa è verticale
-                        int minRow = Math.min(fromRow, toRow); // Calcola la riga minima
-                        int maxRow = Math.max(fromRow, toRow); // Calcola la riga massima
-                        for (int row = minRow + 1; row < maxRow; row++) { // Scorre le righe intermedie
-                            if (getPezzo(row, fromCol) != '-') { // Se una casella intermedia non è vuota, la mossa non è valida
-                                return false;
-                            }
-                        }
-                    }
-                }
-                return true; // Se la casella di destinazione è vuota e la mossa è valida, ritorna true
-            } else { // Se la casella di destinazione non è vuota
-                if (getPezzo(fromRow, fromCol) != '-') { // Verifica che la casella di partenza non sia vuota
-                    if (fromRow == toRow) { // Se la mossa è orizzontale
-                        int minCol = Math.min(fromCol, toCol); // Calcola la colonna minima
-                        int maxCol = Math.max(fromCol, toCol); // Calcola la colonna massima
-                        for (int col = minCol + 1; col < maxCol; col++) { // Scorre le colonne intermedie
-                            if (getPezzo(fromRow, col) != '-' && getPezzo(fromRow, col) != getPezzo(toRow, toCol)) { // Se trova un pezzo diverso
-                                return false; // La mossa non è valida
-                            }
-                        }
-                    } else if (fromCol == toCol) { // Se la mossa è verticale
-                        int minRow = Math.min(fromRow, toRow); // Calcola la riga minima
-                        int maxRow = Math.max(fromRow, toRow); // Calcola la riga massima
-                        for (int row = minRow + 1; row < maxRow; row++) { // Scorre le righe intermedie
-                            if (getPezzo(row, fromCol) != '-' && getPezzo(row, fromCol) != getPezzo(toRow, toCol)) { // Se trova un pezzo diverso
-                                return false; // La mossa non è valida
-                            }
-                        }
-                    }
-                }
-                return true; // Se la casella di destinazione non è vuota e la mossa è valida, ritorna true
-            }
-        }
-        return false; // Se le coordinate non sono valide, ritorna false
+    private boolean isValidMove(int fromRow, int fromCol, int toRow, int toCol) {
+       return fromRow == toRow || fromCol == toCol;
     }
 }
 
