@@ -21,7 +21,9 @@ public class MovimentoRook extends ScacchieraRook { // Estende la classe Scacchi
 
         while (true) { // Loop finché non viene inserita una mossa valida
             System.out.println("Turno del giocatore " + colorePezzo + " '"+simboloPezzo+"'"); // Visualizza il turno e il pezzo
-            System.out.println("Inserisci la mossa del rook (formato: colonna-riga):"); // Prompt per l'input
+            System.out.println("Inserisci la mossa del rook"); // Prompt per l'input
+            System.out.println("Formato mossa (PosizioneIniziale - PosizioneFinale):");
+            System.out.println("N.B il '-' e' obbligatorio,Non e Case Sensitive");
             String mossa = scanner.nextLine(); // Leggi la mossa dall'input
 
             String[] coordinate = mossa.split("-"); // Dividi la stringa di input per ottenere le coordinate di partenza e di destinazione

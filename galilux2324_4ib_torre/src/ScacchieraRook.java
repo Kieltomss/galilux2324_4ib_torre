@@ -10,6 +10,20 @@
 public class ScacchieraRook {
     private static char[][] scacchiera = new char[8][8];
 
+    // Metodo per pulire il terminale
+    private static void clearConsole() {
+        try {
+            if (System.getProperty("os.name").contains("Windows")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     // Disegna la scacchiera corrente
     public static void disegnaScacchiera() {
         // Stampa le pedine in base alla loro posizione sulla scacchiera
@@ -38,6 +52,7 @@ public class ScacchieraRook {
 
     // Stampa la scacchiera con i pezzi e le lettere delle colonne sotto i numeri delle righe
     public static void stampaScacchieraConPezzi() {
+        clearConsole(); // Pulizia del terminale
         // Stampa le pedine in base alla loro posizione sulla scacchiera
         for (int riga = 7; riga >= 0; riga--) {
             System.out.print((riga + 1) + " ");
