@@ -19,6 +19,13 @@ public class MovimentoRook extends ScacchieraRook { // Estende la classe Scacchi
         char simboloPezzo = turnoBianco ? 'R' : 'r'; // Simbolo del pezzo in base al turno
         String colorePezzo = turnoBianco ? "Bianco" : "Nero"; // Colore del pezzo in base al turno
 
+       // piccola guida 
+    System.out.println("Guida per l'inserimento delle mosse:");
+    System.out.println("- Inserisci la mossa nel formato 'PosizioneIniziale - PosizioneFinale'.");
+    System.out.println("- Esempio: Se vuoi come prima mossa puoi spostare la torre in A1 alla posizione A3, per farlo devi inserire 'A1-A3'.");
+    System.out.println("Nota: Ricordati che la torre può muoversi solamente in orizzontale e in verticale");
+    System.out.println("Nota: Per inserire le mosse devi usare solamente le lettere maiuscole");   
+       
         while (true) { // Loop finché non viene inserita una mossa valida
             System.out.println("Turno del giocatore " + colorePezzo + " '"+simboloPezzo+"'"); // Visualizza il turno e il pezzo
             System.out.println("Inserisci la mossa del rook"); // Prompt per l'input
